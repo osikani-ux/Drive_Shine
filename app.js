@@ -276,62 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(`https://wa.me/${driveShineWhatsAppNumber}?text=${message}`, "_blank", "noopener");
   }
 
-  // Keeps the public booking journey unchanged while making confirmed website
-  // submissions immediately visible in the standalone Command Center.
-  function syncBookingToCommandCenter(form) {
-    const storageKey = "drive-shine-command-center-v1";
-    const customer = getFormValue(form, "customerName");
-    const booking = {
-      id: `BK-WEB-${Date.now().toString().slice(-6)}`,
-      customer,
-      phone: getFormValue(form, "bookingPhone"),
-      vehicle: getFormValue(form, "vehicleType"),
-      package: getFormValue(form, "serviceSelect"),
-      date: getFormValue(form, "bookingDate"),
-      time: getFormValue(form, "bookingTime"),
-      price: 0,
-      payment: "Pending",
-      status: "Pending",
-      initials: customer.split(" ").slice(0, 2).map((part) => part[0]).join("").toUpperCase()
-    };
-
-    try {
-      const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
-      saved.bookings = Array.isArray(saved.bookings) ? saved.bookings : [];
-      saved.customers = Array.isArray(saved.customers) ? saved.customers : [];
-      saved.notifications = Array.isArray(saved.notifications) ? saved.notifications : [];
-      saved.bookings.unshift(booking);
-
-      if (!saved.customers.some((item) => item.name && item.name.toLowerCase() === customer.toLowerCase())) {
-        saved.customers.unshift({
-          name: customer,
-          phone: booking.phone,
-          email: getFormValue(form, "bookingEmail"),
-          address: getFormValue(form, "bookingAddress"),
-          membership: "—",
-          spent: 0,
-          service: "New booking",
-          status: "Active",
-          joined: new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }),
-          initials: booking.initials
-        });
-      }
-
-      saved.notifications.unshift({
-        id: Date.now(),
-        type: "booking",
-        icon: "calendar-plus",
-        title: "New website booking received",
-        text: `${customer} requested ${booking.package}.`,
-        time: "Just now",
-        read: false
-      });
-      localStorage.setItem(storageKey, JSON.stringify(saved));
-    } catch (error) {
-      // A booking must never be blocked if browser storage is unavailable.
-      console.warn("Command Center booking sync was unavailable.", error);
-    }
-  }
 
   function openBooking(serviceName = "") {
     bookingModal.classList.add("is-open");
@@ -372,7 +316,6 @@ document.addEventListener("DOMContentLoaded", () => {
   bookingForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!validateForm(bookingForm)) return;
-    syncBookingToCommandCenter(bookingForm);
     openBookingWhatsApp(bookingForm);
     showSuccess("Your booking request is ready in WhatsApp. Send it there so we can confirm your appointment.");
     bookingForm.reset();
