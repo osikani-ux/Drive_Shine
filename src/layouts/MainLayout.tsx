@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { LayoutDashboard, Calendar, BookOpen, Users, Package, CreditCard, Receipt, FileBarChart, Settings, LogOut, Bell, Search, Menu, X, Wrench, DollarSign, Shield } from 'lucide-react';
+import { LayoutDashboard, Calendar, BookOpen, Users, Package, CreditCard, Receipt, FileBarChart, Settings, LogOut, Bell, Search, Menu, X, Wrench, DollarSign, Shield, Mail } from 'lucide-react';
+import { signOut } from 'firebase/auth';
+import { firebaseAuth, requireFirebase } from '../firebase';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,6 +14,7 @@ const navItems = [
   { id: 'dashboard', label: 'Command Center', icon: LayoutDashboard },
   { id: 'calendar', label: 'Calendar', icon: Calendar },
   { id: 'bookings', label: 'Bookings', icon: BookOpen },
+  { id: 'messages', label: 'Messages', icon: Mail },
   { id: 'customers', label: 'Customers', icon: Users },
   { id: 'services', label: 'Services', icon: Wrench },
   { id: 'inventory', label: 'Inventory', icon: Package },
@@ -49,6 +52,9 @@ export default function MainLayout({ children, currentPage, onNavigate }: Layout
   } : null;
 
   const handleLogout = () => {
+    void signOut(requireFirebase(firebaseAuth, 'Authentication')).catch(error => {
+      console.error('Firebase sign-out failed:', error);
+    });
     dispatch({ type: 'LOGOUT' });
   };
 
@@ -56,6 +62,7 @@ export default function MainLayout({ children, currentPage, onNavigate }: Layout
     dashboard: 'Command Center',
     calendar: 'Calendar',
     bookings: 'Bookings',
+    messages: 'Contact Messages',
     customers: 'Customers',
     services: 'Services',
     inventory: 'Inventory',
@@ -68,7 +75,7 @@ export default function MainLayout({ children, currentPage, onNavigate }: Layout
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex h-screen bg-[#f4f3ef] overflow-hidden">
       {/* Sidebar Overlay */}
       {sidebarOpen && (
         <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
@@ -77,13 +84,17 @@ export default function MainLayout({ children, currentPage, onNavigate }: Layout
       {/* Sidebar */}
       <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-navy-900 text-white transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} flex flex-col`}>
         <div className="p-5 border-b border-navy-700">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center text-lg font-bold">D&S</div>
+          <a href="/Drive_Shine-main/index.html" className="flex items-center gap-3" aria-label="Visit Drive&Shine website">
+            <img
+              src="/Drive_Shine-main/images/logo.png"
+              alt=""
+              className="w-14 h-12 object-contain shrink-0"
+            />
             <div>
               <h1 className="font-bold text-sm">Drive&Shine</h1>
-              <p className="text-xs text-navy-300">Command Center</p>
+              <p className="text-xs text-navy-300">Visit Website</p>
             </div>
-          </div>
+          </a>
         </div>
 
         <nav className="flex-1 overflow-y-auto py-4 px-3">

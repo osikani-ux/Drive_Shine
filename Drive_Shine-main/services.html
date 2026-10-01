@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Drive&Shine Mobile Detailing</title>
+  <meta name="description" content="Interior detailing, exterior detailing, engine bay cleaning, paint correction, ceramic coating, and headlight restoration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Drive&Shine Mobile Detailing home">
+          <img src="images/logo.png" alt="Drive&Shine Mobile Detailing logo" />
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="services.html">Services</a>
+          <a class="nav-link" href="packages.html">Packages</a>
+          <a class="nav-link" href="about.html">About Us</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-primary nav-cta" type="button" data-open-booking><i data-lucide="calendar-check"></i>Book Now</button>
+          <button class="mobile-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks" id="mobileToggle"><i data-lucide="menu"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero service-hero">
+        <div class="hero-content">
+          <div class="eyebrow reveal">Services</div>
+          <h1 class="reveal">Luxury Detailing <span>Services.</span></h1>
+          <p class="reveal">Choose focused maintenance or deep restoration. Every service includes premium chemicals, careful hand work, and a mobile setup that comes to your driveway.</p>
+        </div>
+      </section>
+
+      <section class="section section-light section-pad">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Book By Service</div>
+            <h2>Professional Mobile Auto Care</h2>
+            <p>Every card includes starting pricing and a direct booking button that pre-selects the service in the booking form.</p>
+          </div>
+
+          <div class="grid services-grid">
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/inti.png" alt="Luxury vehicle interior detailing" />
+                <span class="service-icon"><i data-lucide="sparkles"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Interior Detailing</h3>
+                <p class="card-copy">Vacuum, steam clean, leather conditioning, trim care, glass cleaning, and odor refresh for a cabin that feels renewed.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$149</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Interior Detailing">Book This Service</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/exti.png" alt="Black luxury car exterior being detailed" />
+                <span class="service-icon"><i data-lucide="droplets"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Exterior Detailing</h3>
+                <p class="card-copy">Foam wash, wheel and tire care, paint decontamination, gloss sealant, and streak-free glass for a crisp exterior finish.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$129</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Exterior Detailing">Book This Service</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/engi.png" alt="Detailed automotive engine bay" />
+                <span class="service-icon"><i data-lucide="settings"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Engine Bay Cleaning</h3>
+                <p class="card-copy">Careful degreasing, brush work, protected rinsing, and trim dressing to revive the area beneath the hood.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$89</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Engine Bay Cleaning">Book This Service</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/paint.png" alt="Glossy black car paint correction" />
+                <span class="service-icon"><i data-lucide="wand-sparkles"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Paint Correction</h3>
+                <p class="card-copy">Machine polishing to reduce swirl marks, haze, oxidation, and light defects while restoring depth and reflection.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$299</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Paint Correction">Book This Service</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/coating.png" alt="Ceramic coated luxury vehicle finish" />
+                <span class="service-icon"><i data-lucide="gem"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Ceramic Coating</h3>
+                <p class="card-copy">High-gloss hydrophobic protection that helps resist contaminants, improves shine, and makes maintenance easier.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$599</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Ceramic Coating">Book This Service</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-media">
+                <img src="images/head.png" alt="Luxury vehicle headlight restoration" />
+                <span class="service-icon"><i data-lucide="flashlight"></i></span>
+              </div>
+              <div class="service-body">
+                <h3>Headlight Restoration</h3>
+                <p class="card-copy">Sanding, polishing, and UV protection to improve clarity, nighttime visibility, and the look of your front end.</p>
+                <div class="service-meta">
+                  <span class="price"><small>Starting at</small>$99</span>
+                  <button class="btn btn-dark mini-btn" type="button" data-open-booking data-service="Headlight Restoration">Book This Service</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-mid section-pad">
+        <div class="container">
+          <div class="booking-strip reveal">
+            <i data-lucide="calendar-days"></i>
+            <div>
+              <h2>Need A Full Package?</h2>
+              <p>Compare complete wash, detail, and showroom packages with transparent pricing.</p>
+            </div>
+            <a class="btn btn-dark" href="packages.html">View Packages</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="index.html" aria-label="Drive&Shine Mobile Detailing home">
+              <img src="images/logo.png" alt="Drive&Shine Mobile Detailing logo" />
+            </a>
+            <p>Premium mobile vehicle care for busy professionals who want to protect their vehicle's appearance and value without disrupting their day.</p>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Interior Detailing</a></li>
+              <li><a href="services.html">Exterior Detailing</a></li>
+              <li><a href="services.html">Paint Correction</a></li>
+              <li><a href="services.html">Ceramic Coating</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="tel:0240871412">0240871412</a></li>
+              <li><a href="mailto:info@driveandshine.com">info@driveandshine.com</a></li>
+              <li>Monday to Saturday</li>
+              <li>8:00 AM to 6:00 PM</li>
+            </ul>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2026 Drive&amp;Shine Mobile Detailing. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

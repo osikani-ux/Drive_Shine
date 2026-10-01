@@ -58,7 +58,7 @@ export default function Dashboard() {
   ].filter(p => p.value > 0);
 
   const stats = [
-    { label: "Today's Bookings", value: todayBookings.length, icon: CalendarDays, color: 'bg-amber-500', change: '+12%' },
+    { label: 'Total Bookings', value: state.bookings.length, icon: CalendarDays, color: 'bg-amber-500', change: '+12%' },
     { label: "Today's Revenue", value: formatCurrency(todayRevenue), icon: DollarSign, color: 'bg-green-500', change: '+8%' },
     { label: 'Total Customers', value: state.customers.length, icon: Users, color: 'bg-purple-500', change: '+5%' },
     { label: 'Active Memberships', value: activeMemberships.length, icon: Shield, color: 'bg-indigo-500', change: '+3%' },

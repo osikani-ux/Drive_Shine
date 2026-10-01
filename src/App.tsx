@@ -14,10 +14,19 @@ import ReportsPage from './pages/Reports';
 import ProfilePage from './pages/Profile';
 import SettingsPage from './pages/Settings';
 import LoginPage from './pages/Login';
+import ContactMessagesPage from './pages/ContactMessages';
 
 function AppContent() {
-  const { state } = useApp();
+  const { state, authReady } = useApp();
   const [currentPage, setCurrentPage] = useState('dashboard');
+
+  if (!authReady) {
+    return (
+      <div className="min-h-screen bg-navy-900 flex items-center justify-center text-white" role="status">
+        Connecting to Firebase…
+      </div>
+    );
+  }
 
   if (!state.currentUserId) {
     return <LoginPage />;
@@ -28,6 +37,7 @@ function AppContent() {
       case 'dashboard': return <Dashboard />;
       case 'calendar': return <CalendarPage />;
       case 'bookings': return <BookingsPage />;
+      case 'messages': return <ContactMessagesPage />;
       case 'customers': return <CustomersPage />;
       case 'services': return <ServicesPage />;
       case 'inventory': return <InventoryPage />;
