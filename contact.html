@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Drive&Shine Mobile Detailing</title>
+  <meta name="description" content="Contact Drive&Shine Mobile Detailing to book mobile detailing, ask questions, or request a custom quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Drive&Shine Mobile Detailing home">
+          <img src="images/logo.png" alt="Drive&Shine Mobile Detailing logo" />
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="packages.html">Packages</a>
+          <a class="nav-link" href="about.html">About Us</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-primary nav-cta" type="button" data-open-booking><i data-lucide="calendar-check"></i>Book Now</button>
+          <button class="mobile-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks" id="mobileToggle"><i data-lucide="menu"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="hero-content">
+          <div class="eyebrow reveal">Contact</div>
+          <h1 class="reveal">Book, Ask, Or <span>Plan A Detail.</span></h1>
+          <p class="reveal">Tell us what you drive and where you are. We will help match the right level of detailing to your vehicle, schedule, and finish goals.</p>
+        </div>
+      </section>
+
+      <section class="section section-dark section-pad">
+        <div class="container">
+          <div class="contact-layout">
+            <aside class="contact-card reveal">
+              <ul class="contact-list">
+                <li>
+                  <i data-lucide="phone"></i>
+                  <div><strong>Phone</strong><a href="tel:0240871412">0240871412</a></div>
+                </li>
+                <li>
+                  <i data-lucide="mail"></i>
+                  <div><strong>Email</strong><a href="mailto:info@driveandshine.com">info@driveandshine.com</a></div>
+                </li>
+                <li>
+                  <i data-lucide="clock"></i>
+                  <div><strong>Business Hours</strong>Monday to Saturday, 8:00 AM to 6:00 PM</div>
+                </li>
+                <li>
+                  <i data-lucide="map-pin"></i>
+                  <div><strong>Service Areas</strong>Your city, nearby suburbs, office parks, residential communities, and private garages.</div>
+                </li>
+              </ul>
+
+              <div class="map-wrap" aria-label="Service area map">
+                <iframe title="Drive&Shine service area map" loading="lazy" src="https://www.google.com/maps?q=mobile%20detailing%20service&output=embed"></iframe>
+              </div>
+            </aside>
+
+            <div class="contact-card reveal">
+              <form id="contactForm" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="contactName">Name</label>
+                    <input id="contactName" name="contactName" type="text" placeholder="Your name" required />
+                    <span class="error-text"></span>
+                  </div>
+                  <div class="field">
+                    <label for="contactPhone">Phone</label>
+                    <input id="contactPhone" name="contactPhone" type="tel" placeholder="Your phone number" required />
+                    <span class="error-text"></span>
+                  </div>
+                  <div class="field full">
+                    <label for="contactEmail">Email</label>
+                    <input id="contactEmail" name="contactEmail" type="email" placeholder="you@example.com" required />
+                    <span class="error-text"></span>
+                  </div>
+                  <div class="field full">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="contactMessage" placeholder="Tell us about your vehicle and detailing goals." required></textarea>
+                    <span class="error-text"></span>
+                  </div>
+                  <div class="field full">
+                    <button class="btn btn-primary" type="submit">
+                      <i data-lucide="send"></i>
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="index.html" aria-label="Drive&Shine Mobile Detailing home">
+              <img src="images/logo.png" alt="Drive&Shine Mobile Detailing logo" />
+            </a>
+            <p>Premium mobile vehicle care for busy professionals who want to protect their vehicle's appearance and value without disrupting their day.</p>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Interior Detailing</a></li>
+              <li><a href="services.html">Exterior Detailing</a></li>
+              <li><a href="services.html">Paint Correction</a></li>
+              <li><a href="services.html">Ceramic Coating</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="tel:0240871412">0240871412</a></li>
+              <li><a href="mailto:info@driveandshine.com">info@driveandshine.com</a></li>
+              <li>Monday to Saturday</li>
+              <li>8:00 AM to 6:00 PM</li>
+            </ul>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2026 Drive&amp;Shine Mobile Detailing. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

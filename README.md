@@ -1,9 +1,10 @@
 # Drive&Shine Website and Command Center
 
-The public website is available at `/Drive_Shine-main/index.html`. The admin
-Command Center is available directly at `/admin` and is not linked in the
-public website navigation. Firebase Hosting rewrites `/admin` to the admin app;
-the login still requires the configured Firebase administrator account.
+The root URL redirects visitors to the public website at
+`/Drive_Shine-main/index.html`. The admin Command Center is available directly
+at `/admin` and is not linked in the public website navigation. Firebase
+Hosting rewrites `/admin` to the admin app; the login still requires the
+configured Firebase administrator account.
 
 ## Firebase setup
 

@@ -7,11 +7,25 @@ import { resolve } from "node:path";
 const root = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    {
+      name: "admin-route",
+      configureServer(server) {
+        server.middlewares.use((request, _response, next) => {
+          if (request.url === "/admin" || request.url === "/admin/") {
+            request.url = "/admin/index.html";
+          }
+          next();
+        });
+      },
+    },
+  ],
   build: {
     rollupOptions: {
       input: {
-        admin: resolve(root, "index.html"),
+        admin: resolve(root, "admin/index.html"),
         websiteHome: resolve(root, "Drive_Shine-main/index.html"),
         websiteServices: resolve(root, "Drive_Shine-main/services.html"),
         websitePackages: resolve(root, "Drive_Shine-main/packages.html"),

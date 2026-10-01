@@ -6,14 +6,21 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/Drive_Shine-main/index.html",
+        "type": 302
+      }
+    ],
     "rewrites": [
       {
         "source": "/admin",
-        "destination": "/index.html"
+        "destination": "/admin/index.html"
       },
       {
         "source": "/admin/**",
-        "destination": "/index.html"
+        "destination": "/admin/index.html"
       }
     ]
   },
